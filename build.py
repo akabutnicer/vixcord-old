@@ -6,7 +6,8 @@ files_to_minify = [
   default / "index.html",
   default / "server.html",
   default / "servers/index.html",
-  default / "sscript.js"
+  default / "sscript.js",
+  default / "style.css"
 ]
 
 
