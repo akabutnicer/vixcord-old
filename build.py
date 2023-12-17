@@ -3,11 +3,11 @@ import pathlib
 
 default = pathlib.Path(__file__).resolve().parent
 files_to_minify = [
-  default / "index.html",
-  default / "server.html",
-  default / "servers/index.html",
-  default / "sscript.js",
-  default / "style.css"
+  default / "./public/index.html",
+  default / "./public/server.html",
+  default / "./public/index.html",
+  default / "./public/server.js",
+  default / "./public/style.css"
 ]
 
 
