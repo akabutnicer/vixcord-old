@@ -11,6 +11,6 @@
  ---
  # Features
    * Markdown support
-   * Full emoji support - `:smile:`, for example.
+   * Full emoji support - `:smile:`, for instance.
    * Multiple servers
    * Channels for the servers are allowed
