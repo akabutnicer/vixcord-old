@@ -5,7 +5,7 @@
 ---
 
 # How the app it works?
- ### Vixcord uses a simple [`socket.io`](https://socket.io) plugin to send messages from the client to the server —— resolving conflict is handled server-side also.
+ ### Vixcord uses a simple [`socket.io`](https://socket.io) plugin to send messages from the client to the server — resolving conflict is handled server-side also.
  ### Markdown is supported via `shutdown`
 
  ---
