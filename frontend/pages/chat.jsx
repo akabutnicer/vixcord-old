@@ -178,7 +178,7 @@ export default function HomePage() {
     }
     var messageRef = React.useRef(null);
     useEffect(() => {
-      messageRef.current.addEventListener("mousedown", () => {
+      messageRef.current?.addEventListener("mousedown", () => {
         var tempIndex = parseInt(messageRef.current.getAttribute("index"));
 
         index = tempIndex;
