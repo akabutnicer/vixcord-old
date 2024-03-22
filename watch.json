@@ -1,0 +1,21 @@
+{
+  "install": {
+    "include": [
+      "^package\\.json$"
+    ],
+    "exclude": []
+  },
+  "restart": {
+    "include": [
+      "^frontend/package\\.json$",
+      "^backend/package\\.json$",
+      "^\\.env$"
+    ],
+    "exclude": [
+      "^frontend/",
+      "^backend/",
+      "^README\\.md$"
+    ]
+  },
+  "noSavedEvents": true
+}

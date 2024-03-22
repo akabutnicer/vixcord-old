@@ -1,16 +1,13 @@
-# `Vixcord`
+# vite-node-template
 
----
-## A modern remake of Discord built with simplicity in mind
----
+vite for frontend / node (express) for backend API
 
-# How the app it works?
- ### Vixcord uses a simple [`socket.io`](https://socket.io) plugin to send messages from the client to the server — resolving conflict is handled server-side also.
- ### Markdown is supported via `shutdown`
+please set
 
- ---
- # Features
-   * Markdown support
-   * Full emoji support - `:smile:`, for instance.
-   * Multiple servers
-   * Channels for the servers are allowed
+    FRONTEND_PORT=3000
+    BACKEND_PORT=40000
+
+in .env first
+
+
+chmod is needed
