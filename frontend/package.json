@@ -1,0 +1,30 @@
+{
+  "name": "vite-node-template-frontend",
+  "version": "0.0.1",
+  "description": "What am I about?",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build"
+  },
+  "type": "module",
+  "browserslist": [
+    ">0.2%",
+    "not dead"
+  ],
+  "engines": {
+    "node": "16.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/~vite-node-combined-package"
+  },
+  "glitch": {
+    "projectType": ""
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "static"
+  ]
+}
