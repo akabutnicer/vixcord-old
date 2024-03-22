@@ -121,11 +121,11 @@ export default function HomePage() {
             set("Mail");
             break;
           case 4:
-            alert(user.pfp)
+            var path = unescape(user.pfp).toString();
             setContent(
               <>
                 <div
-                  class={`h-7 w-7 mr-3 rounded-full bg-[url("${unescape(user.pfp).toString()}")]`}
+                  class={`h-7 w-7 mr-3 rounded-full bg-[url("${path}")]`}
                 ></div>
                 {user.name}
               </>
