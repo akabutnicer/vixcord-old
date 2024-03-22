@@ -201,7 +201,7 @@ export default function HomePage() {
         <div class="flex items-center space-x-2 rtl:space-x-reverse">
             <span class="text-sm font-semibold text-[rgb(148, 155, 164)]">{username}</span>
         </div>
-        <p class="text-sm font-normal py-1 [color:white] text-white"> That's awesome. I think our users will really appreciate the improvements.</p>
+        <p class="text-sm font-normal py-1 color:trueGray-50"> That's awesome. I think our users will really appreciate the improvements.</p>
     </div>
 </div>
 
