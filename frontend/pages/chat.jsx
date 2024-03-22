@@ -199,9 +199,9 @@ export default function HomePage() {
     <div class="w-8 h-8 rounded-full user-pfp" src="/docs/images/people/profile-picture-3.jpg" alt="Jese image"></div>
     <div class="flex flex-col w-full max-w-[320px] leading-1.5">
         <div class="flex items-center space-x-2 rtl:space-x-reverse">
-            <span class="text-sm font-semibold text-gray-900 text-gray-500">{username}</span>
+            <span class="text-sm font-semibold text-gray-500">{username}</span>
         </div>
-        <p class="text-sm font-normal py-2 text-gray-900 dark:text-white"> That's awesome. I think our users will really appreciate the improvements.</p>
+        <p class="text-sm font-normal py-2 text-gray-400 dark:text-white"> That's awesome. I think our users will really appreciate the improvements.</p>
     </div>
 </div>
 
