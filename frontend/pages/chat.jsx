@@ -194,35 +194,19 @@ export default function HomePage() {
     index = index + 1;
 
     return (
-      <motion.div
-        variants={fromLeft}
-        initial="initial"
-        index={tempIndex}
-        animate="animate"
-        ref={messageRef}
-        exit="exit"
-        className={`${
-          tempIndex === selected ? "selected-user" : ""
-        } cursor-pointer relative mt-1 min-h-[55px] rounded-md w-[95%] flex items-center`}
-      >
-        <div
-          className={`userpfp align relative w-10 h-10 self-start ml-3 ${statusType}`}
-        />
-        <div
-          className={`ml-2.5 font-robotoregular name ${
-            tempIndex === selected
-              ? "selected-user-text"
-              : "unselected-user-text"
-          }`}
-        >
-          <h1 className="text-base">{username}</h1>
-          {status.text !== null && (
-            <p className="text-xs text-xxs overflow-hidden inline-block text-ellipsis ">
-              {status.text}
-            </p>
-          )}
+   
+<div class="flex items-start gap-2.5">
+    <div class="w-8 h-8 rounded-full user-pfp" src="/docs/images/people/profile-picture-3.jpg" alt="Jese image"></div>
+    <div class="flex flex-col w-full max-w-[320px] leading-1.5">
+        <div class="flex items-center space-x-2 rtl:space-x-reverse">
+            <span class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</span>
+            <span class="text-sm font-normal text-gray-500 dark:text-gray-400">11:46</span>
         </div>
-      </motion.div>
+        <p class="text-sm font-normal py-2 text-gray-900 dark:text-white"> That's awesome. I think our users will really appreciate the improvements.</p>
+        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+    </div>
+</div>
+
     );
   };
   const ProfileUser = (props) => {
