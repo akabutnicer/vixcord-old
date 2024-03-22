@@ -89,6 +89,6 @@
     "url": "https://glitch.com/~vite-node-combined-package"
   },
   "engines": {
-    "node": "14.x"
+    "node": "18.x"
   }
 }
