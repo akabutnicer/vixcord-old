@@ -182,7 +182,10 @@ export default function HomePage() {
           name: "hello",
           toSet: <>
                 <div
-                  class={`h-7 w-7 mr-3 rounded-full bg-[url("`+'/backgrounds/bg.webp'+`")]`}
+                  class={`h-7 w-7 mr-3 rounded-full`}
+                  style={{
+                    backgroundImage: `url(`+"/backgrounds.bg.webp"+`)`
+                  }}
                 ></div>
               Hello
               </>
