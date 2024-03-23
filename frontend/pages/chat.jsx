@@ -121,19 +121,13 @@ export default function HomePage() {
             set("Mail");
             break;
           case 4:
-            var path = unescape(user.pfp).toString();
             setContent(
-              <>
-                <div
-                  class={`h-7 w-7 mr-3 rounded-full bg-[url("${path}")]`}
-                ></div>
-                {user.name}
-              </>,
+              user.toSet,
             );
             break;
         }
       }
-    }, [navSelected]);
+    }, [navSelected, user]);
 
     return (
       <TextTransition>
@@ -186,6 +180,12 @@ export default function HomePage() {
         setUser({
           pfp: "/backgrounds/bg.webp",
           name: "hello",
+          toSet: <>
+                <div
+                  class={`h-7 w-7 mr-3 rounded-full bg-[url("`+'/backgrounds/bg.webp'+`")]`}
+                ></div>
+              Hello
+              </>
         });
         setNavSelected(4);
       });
