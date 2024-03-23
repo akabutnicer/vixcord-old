@@ -201,7 +201,7 @@ export default function HomePage() {
         <div class="flex items-center space-x-2 rtl:space-x-reverse">
             <span class="text-sm font-semibold text-[#727272]">{username}</span>
         </div>
-        <p class="text-sm font-normal py-1 text-[#727272]"> That's awesome. I think our users will really appreciate the improvements.</p>
+      {status && <p class="text-sm font-normal py-1 text-[#727272]">{status}</p>}
     </div>
 </div>
 
