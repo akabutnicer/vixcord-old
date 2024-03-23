@@ -84,7 +84,7 @@ export default function HomePage() {
                   height="23"
                 ></iconify-icon>
                 <span class="inline-block ml-[5px]">Home</span>
-              </>
+              </>,
             );
             set("Home");
 
@@ -101,7 +101,7 @@ export default function HomePage() {
                   height="23"
                 ></iconify-icon>
                 <span class="inline-block ml-[5px]">Social</span>
-              </>
+              </>,
             );
             set("Social");
             break;
@@ -116,7 +116,7 @@ export default function HomePage() {
                   height="23"
                 ></iconify-icon>
                 <span class="inline-block ml-[5px]">Mail</span>
-              </>
+              </>,
             );
             set("Mail");
             break;
@@ -128,9 +128,9 @@ export default function HomePage() {
                   class={`h-7 w-7 mr-3 rounded-full bg-[url("${path}")]`}
                 ></div>
                 {user.name}
-              </>
+              </>,
             );
-            break
+            break;
         }
       }
     }, [navSelected]);
@@ -152,7 +152,7 @@ export default function HomePage() {
   const nameRef = useState(null);
   let index = 0;
   const User = (props) => {
-    const { username, status = null } = props;
+    const { username, status = null, profile } = props;
 
     let statusType;
 
@@ -184,8 +184,8 @@ export default function HomePage() {
         index = tempIndex;
         setSelected(index);
         setUser({
-          pfp:'/backgrounds/bg.webp',
-          name: 'hello',
+          pfp: "/backgrounds/bg.webp",
+          name: "hello",
         });
         setNavSelected(4);
       });
@@ -194,17 +194,24 @@ export default function HomePage() {
     index = index + 1;
 
     return (
-   
-<div class="flex items-start gap-2">
-    <div class="w-8 h-8 rounded-full userpfp" src="/docs/images/people/profile-picture-3.jpg" alt="Jese image"></div>
-    <div class="flex flex-col w-full max-w-[320px] leading-1.5">
-        <div class="flex items-center space-x-2 rtl:space-x-reverse">
+      <div class="flex items-start gap-2">
+        <div
+          class="w-8 h-8 rounded-full userpfp min-h-[56px] cursor-pointer hover:bg-zinc-500" 
+          ref={messageRef}
+          data-src={profile}
+          alt="Jese image"
+        ></div>
+        <div class="flex flex-col w-full max-w-[320px] leading-1.5">
+          <div class="flex items-center space-x-2 rtl:space-x-reverse">
             <span class="text-sm font-semibold text-[#727272]">{username}</span>
+          </div>
+          {status.text !== null && (
+            <p class="text-sm font-normal py-1 text-[#727272] overflow-hidden text-ellipsis ">
+              {status.text}
+            </p>
+          )}
         </div>
-                      {status.text !== null && <p class="text-sm font-normal py-1 text-[#727272] overflow-hidden text-ellipsis ">{status.text}</p>}
-    </div>
-</div>
-
+      </div>
     );
   };
   const ProfileUser = (props) => {
