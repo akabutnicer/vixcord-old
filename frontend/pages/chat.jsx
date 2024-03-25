@@ -197,14 +197,13 @@ export default function HomePage() {
     index = index + 1;
 
     return (
-      <div class="flex items-start gap-2 hover:bg-zinc-400">
+      <div class="flex items-start gap-2 hover:bg-zinc-500 px-5" ref={messageRef}>
         <div
           class="w-8 h-8 rounded-full userpfp cursor-pointer" 
-          ref={messageRef}
           data-src={profile}
           alt="Jese image"
         ></div>
-        <div class="flex flex-col w-full max-w-[320px] min-h-[56px] leading-1.5 cursor-pointer hover:bg-zinc-400 group">
+        <div class="flex flex-col w-full max-w-[320px] min-h-[56px] leading-1.5 cursor-pointer hover:bg-zinc-500 group">
           <div class="flex items-center space-x-2 rtl:space-x-reverse group">
             <span class="text-sm font-semibold text-[#727272] group-hover:text-white">{username}</span>
           </div>
