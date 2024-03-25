@@ -90,6 +90,6 @@
     "url": "https://glitch.com/~vite-node-combined-package"
   },
   "engines": {
-    "node": "18.x"
+    "node": "20.x"
   }
 }
