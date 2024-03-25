@@ -197,7 +197,7 @@ export default function HomePage() {
     index = index + 1;
 
     return (
-      <div class="flex items-start gap-2 hover:bg-zinc-700 px-5 rounded-6 " ref={messageRef}>
+      <div class="flex items-start gap-2 hover:bg-zinc-700 px-5 rounded-md " ref={messageRef}>
         <div
           class="w-8 h-8 rounded-full userpfp cursor-pointer" 
           data-src={profile}
