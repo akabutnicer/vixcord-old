@@ -199,12 +199,12 @@ export default function HomePage() {
     return (
       <div class="flex items-start gap-2">
         <div
-          class="w-8 h-8 rounded-full userpfp min-h-[56px] cursor-pointer hover:bg-zinc-500" 
+          class="w-8 h-8 rounded-full userpfp cursor-pointer" 
           ref={messageRef}
           data-src={profile}
           alt="Jese image"
         ></div>
-        <div class="flex flex-col w-full max-w-[320px] leading-1.5">
+        <div class="flex flex-col w-full max-w-[320px] min-h-[56px] leading-1.5 cursor-pointer hover:bg-zinc-500">
           <div class="flex items-center space-x-2 rtl:space-x-reverse">
             <span class="text-sm font-semibold text-[#727272]">{username}</span>
           </div>
