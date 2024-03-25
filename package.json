@@ -8,7 +8,7 @@
     "dev": "concurrently 'npm:dev:frontend' 'npm:dev:backend'",
     "install:frontend": "npm --prefix frontend install",
     "install:backend": "npm --prefix backend install",
-    "build": "npm --prefix frontend run build && npm run start",
+    "build": "npm --prefix frontend run build",
     "start": "npx concurrently 'npm:dev:backend' 'npm:dev:frontend'"
   },
   "type": "module",
