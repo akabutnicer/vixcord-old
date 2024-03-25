@@ -1,7 +1,7 @@
 {
   "name": "vite-node-template",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev:frontend": "npm --prefix frontend run dev",
     "dev:backend": "sleep 3; npm --prefix backend run dev",
