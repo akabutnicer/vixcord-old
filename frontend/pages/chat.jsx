@@ -84,7 +84,7 @@ export default function HomePage() {
                   height="23"
                 ></iconify-icon>
                 <span class="inline-block ml-[5px]">Home</span>
-              </>
+              </>,
             );
             set("Home");
 
@@ -101,7 +101,7 @@ export default function HomePage() {
                   height="23"
                 ></iconify-icon>
                 <span class="inline-block ml-[5px]">Social</span>
-              </>
+              </>,
             );
             set("Social");
             break;
@@ -116,24 +116,18 @@ export default function HomePage() {
                   height="23"
                 ></iconify-icon>
                 <span class="inline-block ml-[5px]">Mail</span>
-              </>
+              </>,
             );
             set("Mail");
             break;
           case 4:
-            alert(user.pfp)
             setContent(
-              <>
-                <div
-                  class={`h-7 w-7 mr-3 rounded-full bg-[url("${unescape(user.pfp).toString()}")]`}
-                ></div>
-                {user.name}
-              </>
+              user.toSet,
             );
-            break
+            break;
         }
       }
-    }, [navSelected]);
+    }, [navSelected, user]);
 
     return (
       <TextTransition>
@@ -152,7 +146,7 @@ export default function HomePage() {
   const nameRef = useState(null);
   let index = 0;
   const User = (props) => {
-    const { username, status = null } = props;
+    const { username, status = null, profile } = props;
 
     let statusType;
 
@@ -178,14 +172,23 @@ export default function HomePage() {
     }
     var messageRef = React.useRef(null);
     useEffect(() => {
-      messageRef.current.addEventListener("mousedown", () => {
+      messageRef.current?.addEventListener("mousedown", () => {
         var tempIndex = parseInt(messageRef.current.getAttribute("index"));
 
         index = tempIndex;
         setSelected(index);
         setUser({
-          pfp:'/backgrounds/bg.webp',
-          name: 'hello',
+          pfp: "/backgrounds/bg.webp",
+          name: "hello",
+          toSet: <>
+                <div
+                  class={`h-7 w-7 mr-3 rounded-full`}
+                  style={{
+                    backgroundImage: `url(`+"/backgrounds.bg.webp"+`)`
+                  }}
+                ></div>
+              Hello
+              </>
         });
         setNavSelected(4);
       });
@@ -194,35 +197,23 @@ export default function HomePage() {
     index = index + 1;
 
     return (
-      <motion.div
-        variants={fromLeft}
-        initial="initial"
-        index={tempIndex}
-        animate="animate"
-        ref={messageRef}
-        exit="exit"
-        className={`${
-          tempIndex === selected ? "selected-user" : ""
-        } cursor-pointer relative mt-1 min-h-[55px] rounded-md w-[95%] flex items-center`}
-      >
+      <div class="flex items-start gap-2 hover:bg-zinc-700 px-5 rounded-md " ref={messageRef}>
         <div
-          className={`userpfp align relative w-10 h-10 self-start ml-3 ${statusType}`}
-        />
-        <div
-          className={`ml-2.5 font-robotoregular name ${
-            tempIndex === selected
-              ? "selected-user-text"
-              : "unselected-user-text"
-          }`}
-        >
-          <h1 className="text-base">{username}</h1>
+          class="w-8 h-8 rounded-full userpfp cursor-pointer" 
+          data-src={profile}
+          alt="Jese image"
+        ></div>
+        <div class="flex flex-col w-full max-w-[320px] min-h-[56px] leading-1.5 cursor-pointer hover:bg-zinc-700 group">
+          <div class="flex items-center space-x-2 rtl:space-x-reverse group">
+            <span class="text-sm font-semibold text-[#727272] group-hover:text-white">{username}</span>
+          </div>
           {status.text !== null && (
-            <p className="text-xs text-xxs overflow-hidden inline-block text-ellipsis ">
+            <p class="text-sm font-normal py-1 text-[#727272] group-hover:text-white overflow-hidden text-ellipsis">
               {status.text}
             </p>
           )}
         </div>
-      </motion.div>
+      </div>
     );
   };
   const ProfileUser = (props) => {
