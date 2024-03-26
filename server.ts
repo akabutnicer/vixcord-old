@@ -1,45 +1,16 @@
-import express from "express";
-import * as bodyParser from "body-parser";
-import { createUser, searchUsers } from "./controllers/user.controller";
-import {
-  createConversation,
-  getAllConversations,
-  addMessageToConversation,
-  getConversationMessages,
-} from "./controllers/conversions.controller";
+ import express, { Request, Response } from 'express'
 
+  const app = express()
+  const port = process.env.PORT || 8080
 
+  app.get('/', (_req: Request, res: Response) => {
+    return res.send('Express Typescript on Vercel')
+  })
 
-import { Server } from "socket.io";
-import http from "http";
-import Socket from "./utils/socket";
-import * as types from "./types";
-import ViteExpress from "vite-express";
+  app.get('/ping', (_req: Request, res: Response) => {
+    return res.send('pong 🏓')
+  })
 
-import fs from 'fs';
-import { createServer } from 'vite';
-const app: express.Application = express();
-
-
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-
-
-
-
-// Add the import
-
-// Add the user endpoints
-app.get("server/users/create", createUser);
-app.get("/backend/users/search", searchUsers);
-app.post("/conversations/create", createConversation);
-app.get("*/conversations", getAllConversations);
-app.post("/messages/create", addMessageToConversation);
-app.get("/messages/get", getConversationMessages);
-const server = http.createServer(app);
-const ioServer = new Server(server);
-Socket.getInstance(ioServer);
-server.listen(4000);
-
-console.log(3);
-
+  app.listen(port, () => {
+    return console.log(`Server is listening on ${port}`)
+  })
