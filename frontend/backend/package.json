@@ -4,7 +4,7 @@
   "description": "What am I about?",
   "main": "index.html",
   "scripts": {
-    "dev": "cd .. && vite && cd && nodemon -r dotenv/config server.ts "
+    "dev": "echo \"log TEsT (1)\" cd .. && vite && cd && nodemon -r dotenv/config server.ts"
   },
   "browserslist": [
     ">0.2%",
