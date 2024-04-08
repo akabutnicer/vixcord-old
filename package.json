@@ -89,8 +89,5 @@
   
   "repository": {
     "url": "https://glitch.com/~vite-node-combined-package"
-  },
-  "engines": {
-    "node": "20.x"
   }
 }
