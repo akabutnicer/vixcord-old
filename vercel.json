@@ -1,0 +1,15 @@
+{
+  "devCommand": "npm run dev",
+  "builds": [
+    {
+      "src": "frontend/backend/server.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/backend/server.ts"
+    }
+  ]
+}
