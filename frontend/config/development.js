@@ -1,10 +1,14 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 module.exports = {
-    entry: path.resolve(__dirname, '..', 'index.js')
+    entry: path.resolve(__dirname, '..', 'server/index.js'),
+    externals: [nodeExternals()],
     output: {
         path: path.resolve(__dirname, '..', 'dist'),
         publicPath: '/dist/',
-        filename: 'client.js'
+        filename: 'server.js',
+        library: 'app',
+        libraryTarget: 'commonjs2'
     },
     devServer: {
         contentBase: path.resolve(__dirname, '..', '/'),
@@ -13,7 +17,7 @@ module.exports = {
     resolve: {
         extensions: ['.js'],
         alias: {
-            components: path.resolve(__dirname, '..', 'src/components'),
+            components: path.resolve(__dirname, '..', 'components'),
         }
     },
     module: {
