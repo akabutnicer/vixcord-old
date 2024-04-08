@@ -13,7 +13,7 @@
     "not dead"
   ],
   "engines": {
-    "node": "18.x"
+    "node": "20.x"
   },
   "repository": {
     "url": "https://glitch.com/~vite-node-combined-package"
