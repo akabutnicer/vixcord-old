@@ -45,5 +45,6 @@ app.post("/messages/create", addMessageToConversation);
 app.get("/messages/get", getConversationMessages);
 const server = http.createServer(app);
 const ioServer = new Server(server);
+
 Socket.getInstance(ioServer);
 server.listen(4000);
