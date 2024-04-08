@@ -1,23 +1,19 @@
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
 module.exports = {
-    entry: path.resolve(__dirname, '..', 'server/index.js'),
-    externals: [nodeExternals()],
+    entry: path.resolve(__dirname, '..', 'index.js'),
     output: {
         path: path.resolve(__dirname, '..', 'dist'),
         publicPath: '/dist/',
-        filename: 'server.js',
-        library: 'app',
-        libraryTarget: 'commonjs2'
+        filename: 'client.js'
     },
     devServer: {
-        contentBase: path.resolve(__dirname, '..', '/'),
+        contentBase: path.resolve(__dirname, '..'),
         publicPath: '/dist/'
     },
     resolve: {
         extensions: ['.js'],
         alias: {
-            components: path.resolve(__dirname, '..', 'components'),
+            components: path.resolve(__dirname, '..'),
         }
     },
     module: {
