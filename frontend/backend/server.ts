@@ -13,7 +13,7 @@ import {
 import { Server } from "socket.io";
 import http from "http";
 import Socket from "./utils/socket";
-import { minify } from "html-minify";
+import { minify } from "html-minifier";
 import fs from 'fs';
 import { createServer } from 'vite';
 import { join } from "path"
@@ -35,7 +35,7 @@ const MINIFY_OPTIONS = {
 
 
 app.get('*.html', (req: express.Request, res: express.Response) => {
-  res.send(minify(fs.readFileSync(join('.', req.originalUrl), 'utf-8')), MINIFY_OPTIONS);
+  res.send(minify(fs.readFileSync(join('.', req.originalUrl), 'utf-8'), MINIFY_OPTIONS));
 });
 app.get("server/users/create", createUser);
 app.get("/backend/users/search", searchUsers);
