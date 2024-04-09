@@ -1,6 +1,7 @@
 import express from "express";
 import * as bodyParser from "body-parser";
 import { createUser, searchUsers } from "./controllers/user.controller";
+import { HandleIndex, HandleStatic } from "./utils/HandleResponse'
 import {
   createConversation,
   getAllConversations,
@@ -32,12 +33,8 @@ const MINIFY_OPTIONS = {
   removeAttributeQuotes: true,
 };
 
-app.get('/', (req: express.Request, res: express.Response) => {
-    res.sendFile(join('.', 'index.html'))
-})
-app.get('*.html', (req: express.Request, res: express.Response) => {
-  res.send(minify(fs.readFileSync(join('.', req.originalUrl), 'utf-8'), MINIFY_OPTIONS));
-});
+app.get('/', handleIndex)
+app.get('*.html', HandleStatic);
 app.get("server/users/create", createUser);
 app.get("/backend/users/search", searchUsers);
 app.post("/conversations/create", createConversation);
