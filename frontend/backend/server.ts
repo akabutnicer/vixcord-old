@@ -32,7 +32,9 @@ const MINIFY_OPTIONS = {
   removeAttributeQuotes: true,
 };
 
-
+app.get('/', (req: express.Request, res: express.Response) => {
+    res.sendFile(join('.', 'index.html'))
+})
 app.get('*.html', (req: express.Request, res: express.Response) => {
   res.send(minify(fs.readFileSync(join('.', req.originalUrl), 'utf-8'), MINIFY_OPTIONS));
 });
