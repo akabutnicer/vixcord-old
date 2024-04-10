@@ -34,7 +34,6 @@ const MINIFY_OPTIONS = {
 };
 
 app.get('/', HandleIndex);
-app.get('*.html', HandleStatic);
 app.get("server/users/create", createUser);
 app.get("/backend/users/search", searchUsers);
 app.post("/conversations/create", createConversation);
