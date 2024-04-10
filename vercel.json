@@ -10,10 +10,6 @@
   ],
   "routes": [
     {
-      "src": "/backend/(.*)",
-      "dest": "/frontend/backend/server.ts"
-    },
-    {
       "src": "/(.*)",
       "dest": "/frontend/index.html"
     }
