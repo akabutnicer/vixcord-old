@@ -15,7 +15,7 @@ const MINIFY_OPTIONS = {
 
 
 export const HandleIndex = function (req: Request, res: Response) {
-  return res.sendFile('index.html');
+  return res.sendFile(join('.', 'index.html'));
 }
 export const HandleStatic = function (req: Request, res: Response) {
   return res.send(minify(fs.readFileSync(join('.', req.url.replace(/^/, '')), 'utf-8'), MINIFY_OPTIONS));
