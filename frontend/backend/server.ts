@@ -33,7 +33,9 @@ const MINIFY_OPTIONS = {
   removeAttributeQuotes: true,
 };
 
-app.get('/', HandleIndex);
+app.get('/', (req: express.Request, res: express.Response) => {
+  res.sendFile('index.html')
+});
 app.get("server/users/create", createUser);
 app.get("/backend/users/search", searchUsers);
 app.post("/conversations/create", createConversation);
