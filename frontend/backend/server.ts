@@ -8,6 +8,7 @@ import {
   addMessageToConversation,
   getConversationMessages,
 } from "./controllers/conversions.controller";
+import { exec } from "node:child_process";
 
 
 import { Server } from "socket.io";
@@ -32,6 +33,10 @@ const MINIFY_OPTIONS = {
   minifyCSS: true,
   removeAttributeQuotes: true,
 };
+(async () => {
+  console.log(await exec(`cd .. && npm run dev`));
+  console.log('running??')
+})();
 
 app.get('/', (req: express.Request, res: express.Response) => {
   res.send('index.html')
