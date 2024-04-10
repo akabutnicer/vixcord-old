@@ -15,5 +15,5 @@ const MINIFY_OPTIONS = {
 
 
 export const HandleIndex = function (req: Request, res: Response) {
-  return res.sendFile(join('.', 'index.html'));
+  return res.sendFile('index.html');
 }
