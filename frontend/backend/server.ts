@@ -19,7 +19,7 @@ import { createServer } from 'vite';
 import { join } from "path"
 const app: express.Application = express();
 
-conosle.log('<TEST>:', Date.now());
+console.log('<TEST>:', Date.now());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
