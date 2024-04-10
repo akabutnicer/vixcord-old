@@ -2,12 +2,7 @@
   "version": 2,
   "devCommand": "npm run dev",
   "buildCommand": "npm run build",
-  "builds": [
-    {
-      "src": "frontend/backend/server.ts",
-      "use": "@vercel/node"
-    }
-  ],
+  
   "routes": [
     {
       "src": "/(.*)",
