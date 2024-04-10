@@ -1,7 +1,7 @@
 import express from "express";
 import * as bodyParser from "body-parser";
 import { createUser, searchUsers } from "./controllers/user.controller";
-import { HandleIndex, HandleStatic } from "./utils/HandleResponse'
+import { HandleIndex, HandleStatic } from "./utils/handle.response'
 import {
   createConversation,
   getAllConversations,
