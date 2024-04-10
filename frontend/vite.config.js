@@ -20,7 +20,7 @@ export default defineConfig({
       clientPort: 443,
     },
     proxy: {
-      "/backend": {
+      "/server": {
         target: `http://localhost:${4000}`,
         changeOrigin: true,
         secure: false,
