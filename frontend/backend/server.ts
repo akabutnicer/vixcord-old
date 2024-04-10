@@ -19,7 +19,7 @@ import { createServer } from 'vite';
 import { join } from "path"
 const app: express.Application = express();
 
-
+conosle.log('<TEST>:', Date.now());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
@@ -34,7 +34,7 @@ const MINIFY_OPTIONS = {
 };
 
 app.get('/', (req: express.Request, res: express.Response) => {
-  res.sendFile('index.html')
+  res.send('index.html')
 });
 app.get("server/users/create", createUser);
 app.get("/backend/users/search", searchUsers);
